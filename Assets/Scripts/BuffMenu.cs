@@ -74,6 +74,24 @@ public class BuffMenu : MonoBehaviour
             {
                 buffButton_Object[i].GetComponent<Button>().enabled = false;
                 buffButton_Object[i].GetComponent<Image>().color = Color.gray;
+                if (i != 1)
+                {
+                    speedButton_Upgrades[i] = null;
+                    cdReduction_Upgrades[i] = null;
+                    lifeButton_Upgrades[i] = null;
+                    jumpButton_Upgrades[i] = null;
+                }
+                else
+                {
+                    speedButton_Upgrades[i].GetComponent<Button>().enabled = false;
+                    speedButton_Upgrades[i].GetComponent<Image>().color = Color.gray;
+                    cdReduction_Upgrades[i].GetComponent<Button>().enabled = false;
+                    cdReduction_Upgrades[i].GetComponent<Image>().color = Color.gray;
+                    lifeButton_Upgrades[i].GetComponent<Button>().enabled = false;
+                    lifeButton_Upgrades[i].GetComponent<Image>().color = Color.gray;
+                    jumpButton_Upgrades[i].GetComponent<Button>().enabled = false;
+                    jumpButton_Upgrades[i].GetComponent<Image>().color = Color.gray;
+                }
             }
         }
         else if (buffPoints > 0)
