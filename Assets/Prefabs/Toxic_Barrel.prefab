@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 2862791940826090305}
   - component: {fileID: 2862791940826090304}
   - component: {fileID: 2862791940826090319}
+  - component: {fileID: 7328962393504384750}
   m_Layer: 0
   m_Name: Toxic_Barrel
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -113,7 +114,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.007011354, y: 0.0014022589}
@@ -129,3 +130,17 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.6201415, y: 0.9298866}
   m_EdgeRadius: 0
+--- !u!114 &7328962393504384750
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2862791940826090307}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1d4e839752504a2c9910e77a13faf66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _speed: 5
+  _explosionPrefab: {fileID: 6421666817575571229, guid: 4081f35f1edf7484187b951ea9af896a, type: 3}

@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 8177816800881064785}
   - component: {fileID: 8177816800881064784}
   - component: {fileID: 8177816800881064787}
+  - component: {fileID: -623993894864080821}
   m_Layer: 0
   m_Name: Plastic_Straw
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -113,9 +114,22 @@ CapsuleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.013585046, y: -0.017660737}
   m_Size: {x: 0.28616324, y: 0.9078729}
   m_Direction: 0
+--- !u!114 &-623993894864080821
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8177816800881064799}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 394f6bae8f5f8454dac495e1a12dbda9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _speed: 1.25

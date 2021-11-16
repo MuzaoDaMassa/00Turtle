@@ -1,5 +1,35 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &918660921
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 918660922}
+  m_Layer: 0
+  m_Name: Gun
+  m_TagString: Untagged
+  m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &918660922
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 918660921}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.7, y: 0.3, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4056369669673661727}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4056369669372442889
 GameObject:
   m_ObjectHideFlags: 0
@@ -39,14 +69,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4056369669673661727}
-  - component: {fileID: 4056369669673661699}
+  - component: {fileID: 5978681043584650372}
   - component: {fileID: 4056369669673661720}
   - component: {fileID: 4056369669673661725}
   - component: {fileID: 4056369669673661726}
   - component: {fileID: 4056369669673661724}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -63,10 +93,11 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4056369669372442888}
+  - {fileID: 918660922}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4056369669673661699
+--- !u!114 &5978681043584650372
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -75,12 +106,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 4056369669673661721}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8caa8aca70a614dbc8817e6bc543ea85, type: 3}
+  m_Script: {fileID: 11500000, guid: ee08b00da74ee47978abc6a97c0c9cf9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 5
-  _impulse: 250
+  _impulse: 300
+  _ammo: 0
   groundSensor: {fileID: 4056369669372442888}
+  gun: {fileID: 918660921}
+  buoyProjectile: {fileID: 2272373632245779005, guid: 0d31a20add9dd48478e0cefb8815495e, type: 3}
 --- !u!212 &4056369669673661720
 SpriteRenderer:
   m_ObjectHideFlags: 0
