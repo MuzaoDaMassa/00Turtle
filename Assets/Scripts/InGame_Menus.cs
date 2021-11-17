@@ -22,6 +22,7 @@ public class InGame_Menus : MonoBehaviour
             {
                 pauseMenu_obj.SetActive(true);
                 pauseMenuIsOpen = true;
+                Time.timeScale = 0;
             }
             else if(pauseMenuIsOpen && buffMenuIsOpen)
             {
@@ -32,6 +33,7 @@ public class InGame_Menus : MonoBehaviour
             {
                 pauseMenu_obj.SetActive(false);
                 pauseMenuIsOpen = false;
+                Time.timeScale = 1;
             }
         }
     }
