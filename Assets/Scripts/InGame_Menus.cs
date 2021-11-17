@@ -6,7 +6,6 @@ using UnityEngine.SceneManagement;
 
 public class InGame_Menus : MonoBehaviour
 {
-
     [SerializeField]
     GameObject pauseMenu_obj;
     [SerializeField]
@@ -59,10 +58,4 @@ public class InGame_Menus : MonoBehaviour
         pauseMenu_obj.SetActive(false);
         pauseMenuIsOpen = false;
     }
-
-    public void ReturnToMainMenuButton()
-    {
-
-    }
-
 }

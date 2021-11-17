@@ -28,5 +28,4 @@ public class BuoyProjectile : MonoBehaviour
     {
         Destroy(this.gameObject);
     }
-
 }

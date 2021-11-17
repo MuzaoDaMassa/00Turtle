@@ -73,10 +73,12 @@ public class Player_Controller : MonoBehaviour
         if (_moveX < 0)
         {
             spriteRenderer.flipX = true;
+            gun.gameObject.GetComponent<Transform>().position = new Vector2(this.gameObject.transform.position.x - 1f, gun.transform.position.y) ;
         }
-        else
+        else if (_moveX > 0)
         {
             spriteRenderer.flipX = false;
+            gun.gameObject.GetComponent<Transform>().position = new Vector2(this.gameObject.transform.position.x + 1f, gun.transform.position.y);
         }
     }
 
