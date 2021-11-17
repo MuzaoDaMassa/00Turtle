@@ -110,8 +110,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 5
-  _impulse: 300
-  _ammo: 0
+  _impulse: 350
+  _maxAmmo: 5
   groundSensor: {fileID: 4056369669372442888}
   gun: {fileID: 918660921}
   buoyProjectile: {fileID: 2272373632245779005, guid: 0d31a20add9dd48478e0cefb8815495e, type: 3}
