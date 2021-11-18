@@ -66,13 +66,13 @@ public class BuffMenu : MonoBehaviour
             for(int i = 0; i < 3; i++)
             {
                 speedButton[i].GetComponent<Button>().interactable = false;
-                speedButton[i].GetComponent<Image>().sprite = speedImage[i+5];
+                speedButton[i].GetComponent<Image>().sprite = speedImage[i+6];
                 coldDownButton[i].GetComponent<Button>().interactable = false;
-                coldDownButton[i].GetComponent<Image>().sprite = coldDownImage[i + 5];
+                coldDownButton[i].GetComponent<Image>().sprite = coldDownImage[i + 6];
                 lifeButton[i].GetComponent<Button>().interactable = false;
-                lifeButton[i].GetComponent<Image>().sprite = lifeImage[i + 5];
+                lifeButton[i].GetComponent<Image>().sprite = lifeImage[i + 6];
                 jumpButton[i].GetComponent<Button>().interactable = false;
-                jumpButton[i].GetComponent<Image>().sprite = jumpImage[i + 5];
+                jumpButton[i].GetComponent<Image>().sprite = jumpImage[i + 6];
             }
         }
 
