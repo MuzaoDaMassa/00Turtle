@@ -7,49 +7,74 @@ using UnityEngine.UI;
 public class BuffMenu : MonoBehaviour
 {
     [SerializeField]
-    GameObject[] buffButton_Object;
-    [SerializeField]
-    GameObject[] speedButton_Upgrades,cdReduction_Upgrades, lifeButton_Upgrades, jumpButton_Upgrades;
-    [SerializeField]
     Text buffPoints_Text;
+    private int buffPoints;
 
-    private int buffPoints = 0;
-    private int spd = 0;
-    private int cdr = 0;
-    private int life = 0;
-    private int jump = 0;
+    [SerializeField]
+    Sprite[] speedImage, jumpImage, lifeImage, coldDownImage; //0,1,2 = lv1,lv2,lv3(color); 3,4,5 = lv1,lv2,lv3(light-gray); 6,7,8 = lv1,lv2,lv3(dark-gray);
 
-    // Start is called before the first frame update
+    [SerializeField]
+    GameObject[] speedButton, jumpButton, lifeButton, coldDownButton;
+
+    private int speedLevel, jumpLevel, lifeLevel, coldDownLevel;
+
+    private bool speedLevelOne, speedLevelTwo, speedLevelThree;
+    private bool jumpLevelOne, jumpLevelTwo, jumpLevelThree;
+    private bool lifeLevelOne, lifeLevelTwo, lifeLevelThree;
+    private bool coldDownLevelOne, coldDownLevelTwo, coldDownLevelThree;
+
     void Start()
     {
-        for(int i = 0; i < 4; i++)
-        {
-            if(i != 1)
-            {
-                speedButton_Upgrades[i] = null;
-                cdReduction_Upgrades[i] = null;
-                lifeButton_Upgrades[i] = null;
-                jumpButton_Upgrades[i] = null;
-            }
-            else
-            {
-                speedButton_Upgrades[i].GetComponent<Button>().enabled = false;
-                speedButton_Upgrades[i].GetComponent<Image>().color = Color.gray;
-                cdReduction_Upgrades[i].GetComponent<Button>().enabled = false;
-                cdReduction_Upgrades[i].GetComponent<Image>().color = Color.gray;
-                lifeButton_Upgrades[i].GetComponent<Button>().enabled = false;
-                lifeButton_Upgrades[i].GetComponent<Image>().color = Color.gray;
-                jumpButton_Upgrades[i].GetComponent<Button>().enabled = false;
-                jumpButton_Upgrades[i].GetComponent<Image>().color = Color.gray;
-            }
-        } 
+        speedLevel = 1;
+        jumpLevel = 1;
+        lifeLevel = 1;
+        coldDownLevel = 1;
     }
+
 
     void Update()
     {
         buffPoints_Text.text = buffPoints.ToString();
 
-        CheckBuffPoints();
+        if(CheckBuffPoints() > 0)
+        {
+            if(CheckSpeedLevel() == 1)
+            {
+                speedButton[0].GetComponent<Button>().interactable = true;
+                speedButton[0].GetComponent<Image>().sprite = speedImage[0];
+            }
+
+            else if(CheckSpeedLevel() == 2)
+            {
+                speedButton[0].GetComponent<Button>().interactable = false;
+                speedButton[0].GetComponent<Image>().sprite = speedImage[3];
+                speedButton[1].GetComponent<Button>().interactable = true;
+                speedButton[1].GetComponent<Image>().sprite = speedImage[1];
+            }
+
+            else if(CheckSpeedLevel() == 3)
+            {
+                speedButton[1].GetComponent<Button>().interactable = false;
+                speedButton[1].GetComponent<Image>().sprite = speedImage[4];
+                speedButton[2].GetComponent<Button>().interactable = true;
+                speedButton[2].GetComponent<Image>().sprite = speedImage[2];
+            }
+        }
+
+        else
+        {
+            for(int i = 0; i < 3; i++)
+            {
+                speedButton[i].GetComponent<Button>().interactable = false;
+                speedButton[i].GetComponent<Image>().sprite = speedImage[i+5];
+                coldDownButton[i].GetComponent<Button>().interactable = false;
+                coldDownButton[i].GetComponent<Image>().sprite = coldDownImage[i + 5];
+                lifeButton[i].GetComponent<Button>().interactable = false;
+                lifeButton[i].GetComponent<Image>().sprite = lifeImage[i + 5];
+                jumpButton[i].GetComponent<Button>().interactable = false;
+                jumpButton[i].GetComponent<Image>().sprite = jumpImage[i + 5];
+            }
+        }
 
         // Código de teste para aumentar pontos de habilidade 
         if (Input.GetKeyDown(KeyCode.C))
@@ -66,97 +91,69 @@ public class BuffMenu : MonoBehaviour
         //---------------------------------------------------
     }
 
-    public void CheckBuffPoints()
+    private int CheckBuffPoints()
     {
-        if (buffPoints == 0)
+        return buffPoints;
+    }
+
+    private int CheckSpeedLevel()
+    {
+        return speedLevel;
+    }
+
+    private int CheckLifeLeve()
+    {
+        return lifeLevel;
+    }
+
+    private int CheckColdDownLevel()
+    {
+        return coldDownLevel;
+    }
+
+    private int CheckJumpLevel()
+    {
+        return jumpLevel;
+    }
+
+    public void SpeedUpgrade()
+    {
+        if(CheckBuffPoints() > 0)
         {
-            for (int i = 0; i < buffButton_Object.Length; i++)
+            buffPoints--;
+            if(CheckSpeedLevel() == 1)
             {
-                buffButton_Object[i].GetComponent<Button>().enabled = false;
-                buffButton_Object[i].GetComponent<Image>().color = Color.gray;
-                if (i != 1)
-                {
-                    speedButton_Upgrades[i] = null;
-                    cdReduction_Upgrades[i] = null;
-                    lifeButton_Upgrades[i] = null;
-                    jumpButton_Upgrades[i] = null;
-                }
-                else
-                {
-                    speedButton_Upgrades[i].GetComponent<Button>().enabled = false;
-                    speedButton_Upgrades[i].GetComponent<Image>().color = Color.gray;
-                    cdReduction_Upgrades[i].GetComponent<Button>().enabled = false;
-                    cdReduction_Upgrades[i].GetComponent<Image>().color = Color.gray;
-                    lifeButton_Upgrades[i].GetComponent<Button>().enabled = false;
-                    lifeButton_Upgrades[i].GetComponent<Image>().color = Color.gray;
-                    jumpButton_Upgrades[i].GetComponent<Button>().enabled = false;
-                    jumpButton_Upgrades[i].GetComponent<Image>().color = Color.gray;
-                }
+                buffPoints--;
+                speedLevel = 2;
             }
-        }
-        else if (buffPoints > 0)
-        {
-            if(spd > 0)
+
+            else if(CheckSpeedLevel() == 2)
             {
-                speedButton_Upgrades[spd].GetComponent<Button>().enabled = true;
-                speedButton_Upgrades[spd].GetComponent<Image>().color = Color.white;
+                buffPoints--;
+                speedLevel = 3;
             }
-            if(cdr > 0)
+
+            else
             {
-                cdReduction_Upgrades[cdr].GetComponent<Button>().enabled = true;
-                cdReduction_Upgrades[cdr].GetComponent<Image>().color = Color.white;
-            }
-            if(life > 0)
-            {
-                lifeButton_Upgrades[life].GetComponent<Button>().enabled = true;
-                lifeButton_Upgrades[life].GetComponent<Image>().color = Color.white;
-            }
-            if(jump > 0)
-            {
-                jumpButton_Upgrades[jump].GetComponent<Button>().enabled = true;
-                jumpButton_Upgrades[jump].GetComponent<Image>().color = Color.white;
-            }
-            for (int i = 0; i < buffButton_Object.Length; i++)
-            {
-                buffButton_Object[i].GetComponent<Button>().enabled = true;
-                buffButton_Object[i].GetComponent<Image>().color = Color.white;
+                Debug.Log("Buff already maximized");
             }
         }
     }
 
-    public void Speed()
+    public void LifeUpgrade()
     {
-        if(spd < 4)
-        {
-            spd++;
-            buffPoints--;
-        }
+
     }
 
-    public void CooldDownReduction()
+    public void ColdDownUpgrade()
     {
-        if(cdr < 4)
-        {
-            cdr++;
-            buffPoints--;
-        }
+
     }
 
-    public void Life()
+    public void JumpUpgrade()
     {
-        if(life < 4)
-        {
-            life++;
-            buffPoints--;
-        }
+
     }
 
-    public void Jump()
-    {
-        if (jump < 4)
-        {
-            jump++;
-            buffPoints--;
-        }
-    }
+   
 }
