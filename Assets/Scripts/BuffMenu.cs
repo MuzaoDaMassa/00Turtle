@@ -18,11 +18,6 @@ public class BuffMenu : MonoBehaviour
 
     private int speedLevel, jumpLevel, lifeLevel, coldDownLevel;
 
-    private bool speedLevelOne, speedLevelTwo, speedLevelThree;
-    private bool jumpLevelOne, jumpLevelTwo, jumpLevelThree;
-    private bool lifeLevelOne, lifeLevelTwo, lifeLevelThree;
-    private bool coldDownLevelOne, coldDownLevelTwo, coldDownLevelThree;
-
     void Start()
     {
         speedLevel = 0;
@@ -256,6 +251,8 @@ public class BuffMenu : MonoBehaviour
         }
     }
 
+
+    //Botoes
     public void SpeedUpgrade()
     {
         speedLevel++;
@@ -284,22 +281,9 @@ public class BuffMenu : MonoBehaviour
         buffPoints--;
     }
 
-
-    /*
-    else
-        {
-            for(int i = 0; i< 3; i++)
-            {
-                speedButton[i].GetComponent<Button>().interactable = false;
-                speedButton[i].GetComponent<Image>().sprite = speedImage[i + 6];
-                coldDownButton[i].GetComponent<Button>().interactable = false;
-                coldDownButton[i].GetComponent<Image>().sprite = coldDownImage[i + 6];
-                lifeButton[i].GetComponent<Button>().interactable = false;
-                lifeButton[i].GetComponent<Image>().sprite = lifeImage[i + 6];
-                jumpButton[i].GetComponent<Button>().interactable = false;
-                jumpButton[i].GetComponent<Image>().sprite = jumpImage[i + 6];
-            }
-        }
-    */
+    public void BuffPointAbsorbed()
+    {
+        buffPoints++;
+    }
    
 }
