@@ -16,7 +16,7 @@ public class Trailer_Auxiliar : MonoBehaviour
     private bool btnTwoClick = false;
     private bool btnThreeClick = false;
     private bool btnFourClick = false;
-
+    private bool btnFiveClick;
     [SerializeField]
     GameObject menuEnemies;
     [SerializeField]
@@ -63,6 +63,7 @@ public class Trailer_Auxiliar : MonoBehaviour
             btnThreeClick = false;
             btnFourClick = false;
             btnOneClick = true;
+            btnFiveClick = false;
         }
     }
 
@@ -75,6 +76,7 @@ public class Trailer_Auxiliar : MonoBehaviour
             btnThreeClick = false;
             btnFourClick = false;
             btnTwoClick = true;
+            btnFiveClick = false;
         }
     }
 
@@ -87,6 +89,7 @@ public class Trailer_Auxiliar : MonoBehaviour
             btnTwoClick = false;
             btnFourClick = false;
             btnThreeClick = true;
+            btnFiveClick = false;
         }
     }
 
@@ -99,6 +102,20 @@ public class Trailer_Auxiliar : MonoBehaviour
             btnTwoClick = false;
             btnThreeClick = false;
             btnFourClick = true;
+            btnFiveClick = false;
+        }
+    }
+
+    public void BuffOrb()
+    {
+        if (!btnFiveClick)
+        {
+            Cursor.SetCursor(enemyImage[4], hotSpot, cursorMode);
+            btnOneClick = false;
+            btnTwoClick = false;
+            btnThreeClick = false;
+            btnFourClick = false;
+            btnFiveClick = true;
         }
     }
 
@@ -157,6 +174,16 @@ public class Trailer_Auxiliar : MonoBehaviour
             Debug.Log("enemy4");
             Cursor.SetCursor(standardCursor, hotSpot, cursorMode);
             btnFourClick = false;
+            player.GetComponent<Player_Controller>()._maxAmmo = ammoController;
+        }
+
+        else if (Input.GetButtonDown("Fire1") && btnFiveClick)
+        {
+            Vector3 playerPos = new Vector2(player.GetComponent<Transform>().position.x + 10f, player.GetComponent<Transform>().position.y);
+            Instantiate(enemyPrefab[4], playerPos, Quaternion.identity);
+            Debug.Log("orb");
+            Cursor.SetCursor(standardCursor, hotSpot, cursorMode);
+            btnFiveClick = false;
             player.GetComponent<Player_Controller>()._maxAmmo = ammoController;
         }
     }

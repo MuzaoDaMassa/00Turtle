@@ -18,17 +18,12 @@ public class BuffMenu : MonoBehaviour
 
     private int speedLevel, jumpLevel, lifeLevel, coldDownLevel;
 
-    private bool speedLevelOne, speedLevelTwo, speedLevelThree;
-    private bool jumpLevelOne, jumpLevelTwo, jumpLevelThree;
-    private bool lifeLevelOne, lifeLevelTwo, lifeLevelThree;
-    private bool coldDownLevelOne, coldDownLevelTwo, coldDownLevelThree;
-
     void Start()
     {
-        speedLevel = 1;
-        jumpLevel = 1;
-        lifeLevel = 1;
-        coldDownLevel = 1;
+        speedLevel = 0;
+        jumpLevel = 0;
+        lifeLevel = 0;
+        coldDownLevel = 0;
     }
 
 
@@ -36,45 +31,13 @@ public class BuffMenu : MonoBehaviour
     {
         buffPoints_Text.text = buffPoints.ToString();
 
-        if(CheckBuffPoints() > 0)
-        {
-            if(CheckSpeedLevel() == 1)
-            {
-                speedButton[0].GetComponent<Button>().interactable = true;
-                speedButton[0].GetComponent<Image>().sprite = speedImage[0];
-            }
+        CheckSpeedLevel();
+        CheckLifeLevel();
+        CheckColdDownLevel();
+        CheckJumpLevel();
 
-            else if(CheckSpeedLevel() == 2)
-            {
-                speedButton[0].GetComponent<Button>().interactable = false;
-                speedButton[0].GetComponent<Image>().sprite = speedImage[3];
-                speedButton[1].GetComponent<Button>().interactable = true;
-                speedButton[1].GetComponent<Image>().sprite = speedImage[1];
-            }
 
-            else if(CheckSpeedLevel() == 3)
-            {
-                speedButton[1].GetComponent<Button>().interactable = false;
-                speedButton[1].GetComponent<Image>().sprite = speedImage[4];
-                speedButton[2].GetComponent<Button>().interactable = true;
-                speedButton[2].GetComponent<Image>().sprite = speedImage[2];
-            }
-        }
 
-        else
-        {
-            for(int i = 0; i < 3; i++)
-            {
-                speedButton[i].GetComponent<Button>().interactable = false;
-                speedButton[i].GetComponent<Image>().sprite = speedImage[i+5];
-                coldDownButton[i].GetComponent<Button>().interactable = false;
-                coldDownButton[i].GetComponent<Image>().sprite = coldDownImage[i + 5];
-                lifeButton[i].GetComponent<Button>().interactable = false;
-                lifeButton[i].GetComponent<Image>().sprite = lifeImage[i + 5];
-                jumpButton[i].GetComponent<Button>().interactable = false;
-                jumpButton[i].GetComponent<Image>().sprite = jumpImage[i + 5];
-            }
-        }
 
         // Código de teste para aumentar pontos de habilidade 
         if (Input.GetKeyDown(KeyCode.C))
@@ -96,64 +59,231 @@ public class BuffMenu : MonoBehaviour
         return buffPoints;
     }
 
-    private int CheckSpeedLevel()
-    {
-        return speedLevel;
-    }
-
-    private int CheckLifeLeve()
-    {
-        return lifeLevel;
-    }
-
-    private int CheckColdDownLevel()
-    {
-        return coldDownLevel;
-    }
-
-    private int CheckJumpLevel()
-    {
-        return jumpLevel;
-    }
-
-    public void SpeedUpgrade()
+    private void CheckSpeedLevel()
     {
         if(CheckBuffPoints() > 0)
         {
-            buffPoints--;
-            if(CheckSpeedLevel() == 1)
+            if (speedLevel == 0)
             {
-                buffPoints--;
-                speedLevel = 2;
+                speedButton[0].GetComponent<Button>().interactable = true;
+                speedButton[0].GetComponent<Image>().sprite = speedImage[0];
             }
 
-            else if(CheckSpeedLevel() == 2)
+            else if (speedLevel == 1)
             {
-                buffPoints--;
-                speedLevel = 3;
+                speedButton[0].GetComponent<Button>().interactable = false;
+                speedButton[0].GetComponent<Image>().sprite = speedImage[3];
+                speedButton[1].GetComponent<Button>().interactable = true;
+                speedButton[1].GetComponent<Image>().sprite = speedImage[1];
             }
 
-            else
+            else if (speedLevel == 2)
             {
-                Debug.Log("Buff already maximized");
+                speedButton[0].GetComponent<Button>().interactable = false;
+                speedButton[0].GetComponent<Image>().sprite = speedImage[3];
+                speedButton[1].GetComponent<Button>().interactable = false;
+                speedButton[1].GetComponent<Image>().sprite = speedImage[4];
+                speedButton[2].GetComponent<Button>().interactable = true;
+                speedButton[2].GetComponent<Image>().sprite = speedImage[2];
+            }
+
+            else if (speedLevel == 3)
+            {
+                speedButton[0].GetComponent<Button>().interactable = false;
+                speedButton[1].GetComponent<Button>().interactable = false;
+                speedButton[2].GetComponent<Button>().interactable = false;
+                speedButton[0].GetComponent<Image>().sprite = speedImage[3];
+                speedButton[1].GetComponent<Image>().sprite = speedImage[4];
+                speedButton[2].GetComponent<Image>().sprite = speedImage[5];
+            }
+        }
+        else
+        {
+            for (int i = speedLevel; i < 3; i++)
+            {
+                speedButton[i].GetComponent<Button>().interactable = false;
+                speedButton[i].GetComponent<Image>().sprite = speedImage[i + 6];
             }
         }
     }
 
+    private void CheckLifeLevel()
+    {
+        if (CheckBuffPoints() > 0)
+        {
+            if (lifeLevel == 0)
+            {
+                lifeButton[0].GetComponent<Button>().interactable = true;
+                lifeButton[0].GetComponent<Image>().sprite = lifeImage[0];
+            }
+
+            else if (lifeLevel == 1)
+            {
+                lifeButton[0].GetComponent<Button>().interactable = false;
+                lifeButton[0].GetComponent<Image>().sprite = lifeImage[3];
+                lifeButton[1].GetComponent<Button>().interactable = true;
+                lifeButton[1].GetComponent<Image>().sprite = lifeImage[1];
+            }
+
+            else if (lifeLevel == 2)
+            {
+                lifeButton[0].GetComponent<Button>().interactable = false;
+                lifeButton[0].GetComponent<Image>().sprite = lifeImage[3];
+                lifeButton[1].GetComponent<Button>().interactable = false;
+                lifeButton[1].GetComponent<Image>().sprite = lifeImage[4];
+                lifeButton[2].GetComponent<Button>().interactable = true;
+                lifeButton[2].GetComponent<Image>().sprite = lifeImage[2];
+            }
+
+            else if (lifeLevel == 3)
+            {
+                lifeButton[0].GetComponent<Button>().interactable = false;
+                lifeButton[1].GetComponent<Button>().interactable = false;
+                lifeButton[2].GetComponent<Button>().interactable = false;
+                lifeButton[0].GetComponent<Image>().sprite = lifeImage[3];
+                lifeButton[1].GetComponent<Image>().sprite = lifeImage[4];
+                lifeButton[2].GetComponent<Image>().sprite = lifeImage[5];
+            }
+        }
+        else
+        {
+            for (int i = lifeLevel; i < 3; i++)
+            {
+                lifeButton[i].GetComponent<Button>().interactable = false;
+                lifeButton[i].GetComponent<Image>().sprite = lifeImage[i + 6];
+            }
+        }
+    }
+
+    private void CheckColdDownLevel()
+    {
+        if (CheckBuffPoints() > 0)
+        {
+            if (coldDownLevel == 0)
+            {
+                coldDownButton[0].GetComponent<Button>().interactable = true;
+                coldDownButton[0].GetComponent<Image>().sprite = coldDownImage[0];
+            }
+
+            else if (coldDownLevel == 1)
+            {
+                coldDownButton[0].GetComponent<Button>().interactable = false;
+                coldDownButton[0].GetComponent<Image>().sprite = coldDownImage[3];
+                coldDownButton[1].GetComponent<Button>().interactable = true;
+                coldDownButton[1].GetComponent<Image>().sprite = coldDownImage[1];
+            }
+
+            else if (coldDownLevel == 2)
+            {
+                coldDownButton[0].GetComponent<Button>().interactable = false;
+                coldDownButton[0].GetComponent<Image>().sprite = coldDownImage[3];
+                coldDownButton[1].GetComponent<Button>().interactable = false;
+                coldDownButton[1].GetComponent<Image>().sprite = coldDownImage[4];
+                coldDownButton[2].GetComponent<Button>().interactable = true;
+                coldDownButton[2].GetComponent<Image>().sprite = coldDownImage[2];
+            }
+
+            else if (coldDownLevel == 3)
+            {
+                coldDownButton[0].GetComponent<Button>().interactable = false;
+                coldDownButton[1].GetComponent<Button>().interactable = false;
+                coldDownButton[2].GetComponent<Button>().interactable = false;
+                coldDownButton[0].GetComponent<Image>().sprite = coldDownImage[3];
+                coldDownButton[1].GetComponent<Image>().sprite = coldDownImage[4];
+                coldDownButton[2].GetComponent<Image>().sprite = coldDownImage[5];
+            }
+        }
+        else
+        {
+            for (int i = coldDownLevel; i < 3; i++)
+            {
+                coldDownButton[i].GetComponent<Button>().interactable = false;
+                coldDownButton[i].GetComponent<Image>().sprite = coldDownImage[i + 6];
+            }
+        }
+    }
+
+    private void CheckJumpLevel()
+    {
+        if (CheckBuffPoints() > 0)
+        {
+            if (jumpLevel == 0)
+            {
+                jumpButton[0].GetComponent<Button>().interactable = true;
+                jumpButton[0].GetComponent<Image>().sprite = jumpImage[0];
+            }
+
+            else if (jumpLevel == 1)
+            {
+                jumpButton[0].GetComponent<Button>().interactable = false;
+                jumpButton[0].GetComponent<Image>().sprite = jumpImage[3];
+                jumpButton[1].GetComponent<Button>().interactable = true;
+                jumpButton[1].GetComponent<Image>().sprite = jumpImage[1];
+            }
+
+            else if (jumpLevel == 2)
+            {
+                jumpButton[0].GetComponent<Button>().interactable = false;
+                jumpButton[0].GetComponent<Image>().sprite = jumpImage[3];
+                jumpButton[1].GetComponent<Button>().interactable = false;
+                jumpButton[1].GetComponent<Image>().sprite = jumpImage[4];
+                jumpButton[2].GetComponent<Button>().interactable = true;
+                jumpButton[2].GetComponent<Image>().sprite = jumpImage[2];
+            }
+
+            else if (jumpLevel == 3)
+            {
+                jumpButton[0].GetComponent<Button>().interactable = false;
+                jumpButton[1].GetComponent<Button>().interactable = false;
+                jumpButton[2].GetComponent<Button>().interactable = false;
+                jumpButton[0].GetComponent<Image>().sprite = jumpImage[3];
+                jumpButton[1].GetComponent<Image>().sprite = jumpImage[4];
+                jumpButton[2].GetComponent<Image>().sprite = jumpImage[5];
+            }
+        }
+        else
+        {
+            for (int i = jumpLevel; i < 3; i++)
+            {
+                jumpButton[i].GetComponent<Button>().interactable = false;
+                jumpButton[i].GetComponent<Image>().sprite = jumpImage[i + 6];
+            }
+        }
+    }
+
+
+    //Botoes
+    public void SpeedUpgrade()
+    {
+        speedLevel++;
+        CheckSpeedLevel();
+        buffPoints--;
+    }
+
     public void LifeUpgrade()
     {
-
+        lifeLevel++;
+        CheckLifeLevel();
+        buffPoints--;
     }
 
     public void ColdDownUpgrade()
     {
-
+        coldDownLevel++;
+        CheckColdDownLevel();
+        buffPoints--;
     }
 
     public void JumpUpgrade()
     {
-
+        jumpLevel++;
+        CheckJumpLevel();
+        buffPoints--;
     }
 
+    public void BuffPointAbsorbed()
+    {
+        buffPoints++;
+    }
    
 }
