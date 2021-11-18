@@ -31,7 +31,9 @@ public class ToxicBarrel : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             spriteRenderer.enabled = false;
+            other.gameObject.GetComponent<Player_Controller>().Damage();
             Instantiate(_explosionPrefab, transform.position, Quaternion.identity);
+            Destroy(gameObject);
         }
 
         if (other.gameObject.tag == "Projectile")

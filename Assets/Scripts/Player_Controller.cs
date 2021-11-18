@@ -6,6 +6,7 @@ public class Player_Controller : MonoBehaviour
 {
     public float _speed;
     public float _impulse;
+    public int _hp;
     public int _maxAmmo;
 
     public Transform groundSensor;
@@ -14,6 +15,7 @@ public class Player_Controller : MonoBehaviour
 
     private bool _jump;
     private bool _isGrounded;
+    private bool _inDash = false;
     private float _moveX;
     private float _nextFire = -1.0f;
     private float _fireRate = 0.5f;
@@ -24,7 +26,6 @@ public class Player_Controller : MonoBehaviour
     private Rigidbody2D rb2d;
     private SpriteRenderer spriteRenderer;
     private Animator animator;
-
 
     // Start is called before the first frame update
     void Start()
@@ -52,6 +53,11 @@ public class Player_Controller : MonoBehaviour
         if (Input.GetMouseButton(1) && Time.time > _nextDash)
         {
             Dash();
+        }
+
+        if (_hp <= 0)
+        {
+            Destroy(gameObject);
         }
     }
 
@@ -84,7 +90,7 @@ public class Player_Controller : MonoBehaviour
 
     private void Jump()
     {
-        _isGrounded = Physics2D.Linecast(transform.position, groundSensor.transform.position, 1 << LayerMask.NameToLayer("Ground"));
+        _isGrounded = Physics2D.Linecast(transform.position, groundSensor.position, 1 << LayerMask.NameToLayer("Ground"));
 
         if (Input.GetButtonDown("Jump") && _isGrounded)
         {
@@ -112,9 +118,17 @@ public class Player_Controller : MonoBehaviour
     {
         _nextDash = Time.time + _dashRate;
         animator.SetTrigger("toDash");
+        StartCoroutine(DashInvunerabilityRoutine());
     }
 
-    IEnumerator AmmoStorage()
+    private IEnumerator DashInvunerabilityRoutine()
+    {
+        _inDash = true;
+        yield return new WaitForSeconds(0.3f);
+        _inDash = false;
+    }
+
+    private IEnumerator AmmoStorage()
     {
         if (_ammo >= _maxAmmo)
         {
@@ -129,4 +143,27 @@ public class Player_Controller : MonoBehaviour
             StartCoroutine(AmmoStorage());
         }
     }
+
+    private IEnumerator DamageAnimation()
+    {
+        if (_hp >= 1)
+        {
+            for (int i = 0; i < 6; i++)
+            {
+                spriteRenderer.enabled = !spriteRenderer.enabled;
+                yield return new WaitForSeconds(0.2f);
+            }
+        }
+    }
+
+
+    public void Damage()
+    {
+        if (!_inDash && _hp >=1)
+        {
+            _hp--;
+            StartCoroutine(DamageAnimation());
+        }
+    }
 }
+

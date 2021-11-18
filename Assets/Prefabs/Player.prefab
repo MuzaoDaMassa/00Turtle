@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 918660921}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.7, y: 0.3, z: 0}
+  m_LocalPosition: {x: 0.84, y: 0.3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4056369669673661727}
@@ -111,7 +111,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _speed: 5
   _impulse: 300
-  _ammo: 0
+  _hp: 5
+  _maxAmmo: 5
   groundSensor: {fileID: 4056369669372442888}
   gun: {fileID: 918660921}
   buoyProjectile: {fileID: 2272373632245779005, guid: 0d31a20add9dd48478e0cefb8815495e, type: 3}

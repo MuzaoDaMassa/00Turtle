@@ -28,6 +28,7 @@ public class PlasticBag : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
+            other.gameObject.GetComponent<Player_Controller>().Damage();
             Destroy(gameObject);
         }
         if (other.gameObject.tag == "Projectile")
