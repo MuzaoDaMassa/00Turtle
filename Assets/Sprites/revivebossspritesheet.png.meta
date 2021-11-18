@@ -1,0 +1,564 @@
+fileFormatVersion: 2
+guid: 75fa34e30995347108b0e9575d625d81
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 5081946863972251942
+    second: revivebossspritesheet_0
+  - first:
+      213: 4236194554124479486
+    second: revivebossspritesheet_2
+  - first:
+      213: 6408868401832405065
+    second: revivebossspritesheet_4
+  - first:
+      213: 3679196642860774653
+    second: revivebossspritesheet_6
+  - first:
+      213: -3411524584784245872
+    second: revivebossspritesheet_10
+  - first:
+      213: -1858416680791904475
+    second: revivebossspritesheet_12
+  - first:
+      213: 2873009576111720057
+    second: revivebossspritesheet_14
+  - first:
+      213: -7104465596939663540
+    second: revivebossspritesheet_15
+  - first:
+      213: 6011758846486138707
+    second: revivebossspritesheet_16
+  - first:
+      213: -6308316605075313517
+    second: revivebossspritesheet_17
+  - first:
+      213: -2392777216031340154
+    second: revivebossspritesheet_18
+  - first:
+      213: -7803021350637671985
+    second: revivebossspritesheet_19
+  - first:
+      213: 466844250749521858
+    second: revivebossspritesheet_20
+  - first:
+      213: -1586046645447235513
+    second: revivebossspritesheet_21
+  - first:
+      213: 3171382957218140708
+    second: revivebossspritesheet_22
+  - first:
+      213: -3374233421830130325
+    second: revivebossspritesheet_23
+  - first:
+      213: 6003713004251135583
+    second: revivebossspritesheet_24
+  - first:
+      213: 6410196326450650430
+    second: revivebossspritesheet_25
+  - first:
+      213: -5772363933927829429
+    second: revivebossspritesheet_26
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: revivebossspritesheet_0
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 506
+        width: 123
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 629f97a5fb3b68640800000000000000
+      internalID: 5081946863972251942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: revivebossspritesheet_2
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 506
+        width: 122
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: efba80ea08cf9ca30800000000000000
+      internalID: 4236194554124479486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: revivebossspritesheet_4
+      rect:
+        serializedVersion: 2
+        x: 331
+        y: 506
+        width: 124
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94822771bdfd0f850800000000000000
+      internalID: 6408868401832405065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: revivebossspritesheet_6
+      rect:
+        serializedVersion: 2
+        x: 490
+        y: 506
+        width: 134
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df4b68c7ad12f0330800000000000000
+      internalID: 3679196642860774653
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: revivebossspritesheet_10
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 404
+        width: 140
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09b4c651774d7a0d0800000000000000
+      internalID: -3411524584784245872
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: revivebossspritesheet_12
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 404
+        width: 143
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52fecb800e39536e0800000000000000
+      internalID: -1858416680791904475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: revivebossspritesheet_14
+      rect:
+        serializedVersion: 2
+        x: 332
+        y: 398
+        width: 146
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9764f64dcfafed720800000000000000
+      internalID: 2873009576111720057
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: revivebossspritesheet_15
+      rect:
+        serializedVersion: 2
+        x: 484
+        y: 398
+        width: 146
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c478d6f3e2ed76d90800000000000000
+      internalID: -7104465596939663540
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: revivebossspritesheet_16
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 304
+        width: 146
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35f4e18b1de0e6350800000000000000
+      internalID: 6011758846486138707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: revivebossspritesheet_17
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 304
+        width: 146
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39ca9c7787b5478a0800000000000000
+      internalID: -6308316605075313517
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: revivebossspritesheet_18
+      rect:
+        serializedVersion: 2
+        x: 324
+        y: 304
+        width: 146
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 689cdcbacc52bced0800000000000000
+      internalID: -2392777216031340154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: revivebossspritesheet_19
+      rect:
+        serializedVersion: 2
+        x: 478
+        y: 304
+        width: 146
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc9e37c7c6916b390800000000000000
+      internalID: -7803021350637671985
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: revivebossspritesheet_20
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 213
+        width: 146
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2cfcb536f509a7600800000000000000
+      internalID: 466844250749521858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: revivebossspritesheet_21
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 213
+        width: 146
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 748eaecaafa3df9e0800000000000000
+      internalID: -1586046645447235513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: revivebossspritesheet_22
+      rect:
+        serializedVersion: 2
+        x: 334
+        y: 213
+        width: 146
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42217b33ff3030c20800000000000000
+      internalID: 3171382957218140708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: revivebossspritesheet_23
+      rect:
+        serializedVersion: 2
+        x: 484
+        y: 213
+        width: 146
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b65709e84905c21d0800000000000000
+      internalID: -3374233421830130325
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: revivebossspritesheet_24
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 113
+        width: 146
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5e38c71b29715350800000000000000
+      internalID: 6003713004251135583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: revivebossspritesheet_25
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 118
+        width: 146
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3dda92a89795f850800000000000000
+      internalID: 6410196326450650430
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: revivebossspritesheet_26
+      rect:
+        serializedVersion: 2
+        x: 334
+        y: 118
+        width: 146
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4094fbd59174efa0800000000000000
+      internalID: -5772363933927829429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -51,10 +51,11 @@ public class PlasticStraw : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
+            other.gameObject.GetComponent<Player_Controller>().Damage();
             Destroy(gameObject);
         }
 
-        if (other.gameObject.tag == "Projectile")
+        else if (other.gameObject.tag == "Projectile")
         {
             Destroy(other.gameObject);
             Destroy(gameObject);

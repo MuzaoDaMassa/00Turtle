@@ -27,6 +27,7 @@ public class GlassBottle : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
+            other.gameObject.GetComponent<Player_Controller>().Damage();
             Destroy(gameObject);
         }
 
