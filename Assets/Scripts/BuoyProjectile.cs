@@ -6,8 +6,29 @@ public class BuoyProjectile : MonoBehaviour
 {
     public float _speed;
 
+    private Vector2 _direction;
+
+    private SpriteRenderer playerSR;
+    private GameObject player;
+
+    private void Awake()
+    {
+        player = GameObject.FindGameObjectWithTag("Player");
+        playerSR = player.GetComponent<SpriteRenderer>();  
+    }
+
+
     private void Start()
     {
+        if (playerSR.flipX)
+        {
+            _direction = Vector2.left;
+        }
+        else
+        {
+            _direction = Vector2.right;
+        }
+
         StartCoroutine(DestroyRoutine());
         
     }
@@ -15,7 +36,7 @@ public class BuoyProjectile : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(Vector2.right * _speed * Time.deltaTime);
+        transform.Translate(_direction * _speed * Time.deltaTime);
     }
 
     private IEnumerator DestroyRoutine()
@@ -24,9 +45,16 @@ public class BuoyProjectile : MonoBehaviour
         Destroy(this.gameObject);
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        if(collision.gameObject.tag != "Orb") // Adicionei tag para o projetil "atravessar" o orb, mas podemos remover isso
+        if(other.gameObject.tag == "Boss") // Adicionei tag para o projetil "atravessar" o orb, mas podemos remover isso
+        {
+            Debug.Log("Here");
+            other.gameObject.GetComponent<Boss>().TakeDamage();
+            Destroy(gameObject);
+            
+        }
+        else if (other.gameObject.tag != "Orb")
         {
             Destroy(this.gameObject);
         }
