@@ -26,7 +26,10 @@ public class BuoyProjectile : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Destroy(this.gameObject);
+        if(collision.gameObject.tag != "Orb") // Adicionei tag para o projetil "atravessar" o orb, mas podemos remover isso
+        {
+            Destroy(this.gameObject);
+        }
     }
 
 }
