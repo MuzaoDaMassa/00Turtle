@@ -20,6 +20,7 @@ public class BuffMenu : MonoBehaviour
 
     void Start()
     {
+        Time.timeScale = 1;
         speedLevel = 0;
         jumpLevel = 0;
         lifeLevel = 0;

@@ -14,6 +14,11 @@ public class InGame_Menus : MonoBehaviour
 
     private bool pauseMenuIsOpen, buffMenuIsOpen;
 
+    private void Start()
+    {
+        Time.timeScale = 1;
+    }
+
 
     private void Update()
     {
