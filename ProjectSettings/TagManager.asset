@@ -9,6 +9,8 @@ TagManager:
   - Ground
   - Orb
   - BuffMenu
+  - Boss
+  - HealthRegen
   layers:
   - Default
   - TransparentFX

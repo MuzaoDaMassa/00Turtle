@@ -54,7 +54,7 @@ public class BuoyProjectile : MonoBehaviour
             Destroy(gameObject);
             
         }
-        else if (other.gameObject.tag != "Orb")
+        else if (other.gameObject.tag != "Orb" && other.gameObject.tag != "HealthRegen")
         {
             Destroy(this.gameObject);
         }
