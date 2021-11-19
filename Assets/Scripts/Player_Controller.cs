@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Player_Controller : MonoBehaviour
 {
@@ -27,17 +28,22 @@ public class Player_Controller : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     private Animator animator;
 
-    // Start is called before the first frame update
+    [SerializeField]
+    Text maxAmmo_Text, currentAmmo_Text;
+
     void Start()
     {
+        maxAmmo_Text.text = _maxAmmo.ToString();
+        currentAmmo_Text.text = _ammo.ToString();
         rb2d = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
         _ammo = _maxAmmo;
+        maxAmmo_Text.text = _maxAmmo.ToString();
+        currentAmmo_Text.text = _ammo.ToString();
         StartCoroutine(AmmoStorage());
     }
 
-    // Update is called once per frame
     void Update()
     {
         Movement();
@@ -59,6 +65,8 @@ public class Player_Controller : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        UpdateCurrentAmmoUI();
     }
 
     private void FixedUpdate()
@@ -68,6 +76,7 @@ public class Player_Controller : MonoBehaviour
         if (_jump)
         {
             rb2d.AddForce(Vector2.up * _impulse);
+            animator.SetFloat("toJump", rb2d.velocity.y);
             _jump = false;
         }
     }
@@ -101,8 +110,7 @@ public class Player_Controller : MonoBehaviour
     private void Animations()
     {
         animator.SetFloat("toMove", Mathf.Abs(_moveX));
-        animator.SetFloat("toJump", rb2d.velocity.y);
-        
+        //animator.SetFloat("toJump", rb2d.velocity.y);
     }
 
     private void Attack()
@@ -164,6 +172,11 @@ public class Player_Controller : MonoBehaviour
             _hp--;
             StartCoroutine(DamageAnimation());
         }
+    }
+
+    private void UpdateCurrentAmmoUI()
+    {
+        currentAmmo_Text.text = _ammo.ToString();
     }
 }
 
