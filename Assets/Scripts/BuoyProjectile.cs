@@ -6,13 +6,17 @@ public class BuoyProjectile : MonoBehaviour
 {
     public float _speed;
 
+    public AudioClip shotFiredSFX;
+
     private Vector2 _direction;
 
     private SpriteRenderer playerSR;
     private GameObject player;
+    private AudioSource audioSource;
 
     private void Awake()
     {
+        audioSource = GetComponent<AudioSource>();
         player = GameObject.FindGameObjectWithTag("Player");
         playerSR = player.GetComponent<SpriteRenderer>();  
     }
@@ -20,6 +24,8 @@ public class BuoyProjectile : MonoBehaviour
 
     private void Start()
     {
+        audioSource.PlayOneShot(shotFiredSFX);
+
         if (playerSR.flipX)
         {
             _direction = Vector2.left;

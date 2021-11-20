@@ -5,15 +5,18 @@ using UnityEngine.UI;
 
 public class Player_Controller : MonoBehaviour
 {
+    #region Public Variables
     public float _speed;
     public float _impulse;
-    public int _hp;
+    public float _ammoRechargeTime;
+    public int _hp, _maxHp;
     public int _maxAmmo;
-
     public Transform groundSensor;
     public GameObject gun;
     public GameObject buoyProjectile;
+    #endregion
 
+    #region Private Variables
     private bool _jump;
     private bool _isGrounded;
     private bool _inDash = false;
@@ -27,18 +30,20 @@ public class Player_Controller : MonoBehaviour
     private Rigidbody2D rb2d;
     private SpriteRenderer spriteRenderer;
     private Animator animator;
+    #endregion
 
     [SerializeField]
     Text maxAmmo_Text, currentAmmo_Text;
 
     void Start()
     {
-        maxAmmo_Text.text = _maxAmmo.ToString();
-        currentAmmo_Text.text = _ammo.ToString();
         rb2d = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
         _ammo = _maxAmmo;
+        _hp = _maxHp;
+        maxAmmo_Text.text = _maxAmmo.ToString();
+        currentAmmo_Text.text = _ammo.ToString();
         maxAmmo_Text.text = _maxAmmo.ToString();
         currentAmmo_Text.text = _ammo.ToString();
         StartCoroutine(AmmoStorage());
@@ -147,7 +152,7 @@ public class Player_Controller : MonoBehaviour
         else
         {
             _ammo++;
-            yield return new WaitForSeconds(3.0f);
+            yield return new WaitForSeconds(_ammoRechargeTime);
             StartCoroutine(AmmoStorage());
         }
     }
@@ -178,5 +183,30 @@ public class Player_Controller : MonoBehaviour
     {
         currentAmmo_Text.text = _ammo.ToString();
     }
+
+    #region Buffs
+
+    public void RaiseMoveSpeed()
+    {
+        _speed += 1.5f;
+    }
+
+    public void RaiseJumpHeight()
+    {
+        _impulse += 50.0f;
+    }
+
+    public void IncreaseHealth()
+    {
+        _hp++;
+        _maxHp++;
+    }
+
+    public void DecreaseCdr()
+    {
+        _ammoRechargeTime -= 0.5f;
+    }
+
+    #endregion
 }
 

@@ -75,6 +75,7 @@ GameObject:
   - component: {fileID: 4056369669673661726}
   - component: {fileID: 4056369669673661724}
   - component: {fileID: 4734006041907654295}
+  - component: {fileID: 7684389694830347519}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -111,12 +112,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 5
-  _impulse: 300
-  _hp: 5
+  _impulse: 350
+  _ammoRechargeTime: 3
+  _hp: 0
+  _maxHp: 5
   _maxAmmo: 5
   groundSensor: {fileID: 4056369669372442888}
   gun: {fileID: 918660921}
   buoyProjectile: {fileID: 2272373632245779005, guid: 0d31a20add9dd48478e0cefb8815495e, type: 3}
+  maxAmmo_Text: {fileID: 0}
+  currentAmmo_Text: {fileID: 0}
 --- !u!212 &4056369669673661720
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -250,3 +255,15 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.5948714, y: 1.436}
   m_EdgeRadius: 0
+--- !u!114 &7684389694830347519
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4056369669673661721}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2de7109802a89475a9d5c06cf960db1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

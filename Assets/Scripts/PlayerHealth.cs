@@ -13,7 +13,7 @@ public class PlayerHealth : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player_Controller>();
         slider = GetComponent<Slider>();
-        //slider.maxValue = player._hp;
+        slider.maxValue = player._maxHp;
     }
 
     // Update is called once per frame
