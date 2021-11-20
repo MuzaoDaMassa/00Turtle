@@ -10,6 +10,8 @@ public class Boss : MonoBehaviour
     public bool _isFlipped = false;
     public bool _isEnraged = false;
 
+    public GameObject _clonePrefab;
+
     //private float _jumpDistance;
    
 
@@ -102,6 +104,14 @@ public class Boss : MonoBehaviour
         StartCoroutine(JumpAttackRoutine());
     }
 
+    private IEnumerator CloneAttackRoutine()
+    {
+        yield return new WaitForSeconds(Random.Range(2.5f, 5.0f));
+        Instantiate(_clonePrefab, transform.position, Quaternion.identity);
+
+        StartCoroutine(CloneAttackRoutine());
+    }
+
     public void CallJumpAttack()
     {
         StartCoroutine(JumpAttackRoutine());
@@ -111,8 +121,13 @@ public class Boss : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            player.GetComponent<Player_Controller>().Damage();
+            player.GetComponent<Player_Controller>().TakeDamage();
         }
+    }
+
+    public void CallCloneAttackRoutine()
+    {
+        StartCoroutine(CloneAttackRoutine());
     }
 }
 

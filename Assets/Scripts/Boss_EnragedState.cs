@@ -16,7 +16,7 @@ public class Boss_EnragedState : StateMachineBehaviour
         boss = animator.GetComponent<Boss>();
 
         boss._isEnraged = true;
-        //boss.CallJumpAttack();
+        boss.CallCloneAttackRoutine();
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks

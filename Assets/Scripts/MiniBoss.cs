@@ -2,18 +2,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlasticBag : MonoBehaviour
+public class MiniBoss : MonoBehaviour
 {
+
     public float _speed;
 
-    private GameObject player;
+    private Player_Controller player;
 
-    private void Start()
+
+    private void Awake()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
-        Debug.Log(player);
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player_Controller>();
     }
 
+    // Start is called before the first frame update
+    void Start()
+    {
+        
+    }
 
     // Update is called once per frame
     void Update()
@@ -28,13 +34,13 @@ public class PlasticBag : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            other.gameObject.GetComponent<Player_Controller>().TakeDamage();
+            player.TakeDamage();
             Destroy(gameObject);
         }
-        if (other.gameObject.tag == "Projectile")
+        else if(other.gameObject.tag == "Projectile")
         {
             Destroy(other.gameObject);
             Destroy(gameObject);
-        }  
+        }
     }
 }
