@@ -18,7 +18,7 @@ public class HealthRegen : MonoBehaviour
     {
         if(collision.gameObject.tag == "Player")
         {
-            if(player_obj.GetComponent<Player_Controller>()._hp < 5) //mudar 5 para hp max (criar variavel hp max no script do player)
+            if(player_obj.GetComponent<Player_Controller>()._hp < player_obj.GetComponent<Player_Controller>()._maxHp) 
             {
                 player_obj.GetComponent<Player_Controller>()._hp++;
                 Destroy(this.gameObject);

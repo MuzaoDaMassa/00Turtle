@@ -11,6 +11,7 @@ TagManager:
   - BuffMenu
   - Boss
   - HealthRegen
+  - toxic_explosion
   layers:
   - Default
   - TransparentFX

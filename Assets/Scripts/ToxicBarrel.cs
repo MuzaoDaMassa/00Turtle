@@ -10,6 +10,9 @@ public class ToxicBarrel : MonoBehaviour
     private int _counter = 3;
     private SpriteRenderer spriteRenderer;
 
+    private bool exploded = false;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -28,15 +31,16 @@ public class ToxicBarrel : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.tag == "Player")
+        if (other.gameObject.tag == "Player" && !exploded)
         {
+            exploded = true;
             spriteRenderer.enabled = false;
             other.gameObject.GetComponent<Player_Controller>().Damage();
             Instantiate(_explosionPrefab, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
 
-        if (other.gameObject.tag == "Projectile")
+        if (other.gameObject.tag == "Projectile" && !exploded)
         {
             if (_counter > 1)
             {
@@ -45,11 +49,20 @@ public class ToxicBarrel : MonoBehaviour
             }
             else
             {
+                exploded = true;
                 spriteRenderer.enabled = false;
                 Instantiate(_explosionPrefab, transform.position, Quaternion.identity);
+                StartCoroutine(DestroyExplosionObject());
                 Destroy(other.gameObject);
             }
-        }
-        
+        }   
+    }
+
+    IEnumerator DestroyExplosionObject()
+    {
+        yield return new WaitForSeconds(1.1f);
+        GameObject obj = GameObject.FindGameObjectWithTag("toxic_explosion");
+        Destroy(obj);
+        Destroy(this.gameObject);
     }
 }

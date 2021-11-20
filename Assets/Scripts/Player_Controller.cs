@@ -14,6 +14,7 @@ public class Player_Controller : MonoBehaviour
     public Transform groundSensor;
     public GameObject gun;
     public GameObject buoyProjectile;
+    public bool noMenuIsOpen = true;
     #endregion
 
     #region Private Variables
@@ -56,12 +57,12 @@ public class Player_Controller : MonoBehaviour
         Animations();
 
         // CALL ATTACK FUNCTION IF LEFT MOUSE BUTTON IS PRESSED
-        if (Input.GetMouseButtonDown(0) && Time.time > _nextFire && _ammo > 0)
+        if (Input.GetMouseButtonDown(0) && Time.time > _nextFire && _ammo > 0 && noMenuIsOpen)
         {
             Attack();
         }
         // CALL DASH FUNCTION IF RIGHT MOUSE BUTTON IS PRESSED
-        if (Input.GetMouseButton(1) && Time.time > _nextDash)
+        if (Input.GetMouseButton(1) && Time.time > _nextDash && noMenuIsOpen)
         {
             Dash();
         }
@@ -193,12 +194,13 @@ public class Player_Controller : MonoBehaviour
 
     public void RaiseJumpHeight()
     {
-        _impulse += 50.0f;
+        _impulse += 20.0f;
     }
 
     public void IncreaseHealth()
     {
         _hp++;
+        _maxHp++;
         _maxHp++;
     }
 

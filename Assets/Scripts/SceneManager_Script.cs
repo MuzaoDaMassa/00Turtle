@@ -15,9 +15,9 @@ public class SceneManager_Script : MonoBehaviour
         SceneManager.LoadScene("InGame");
     }
 
-    public void OptionsScene()
+    public void PreGameScene()
     {
-        SceneManager.LoadScene("Options");
+        SceneManager.LoadScene("PreGame");
     }
 
     public void QuitGame()

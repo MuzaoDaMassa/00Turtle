@@ -11,6 +11,8 @@ public class InGame_Menus : MonoBehaviour
     GameObject pauseMenu_obj;
     [SerializeField]
     GameObject buffMenu_obj;
+    [SerializeField]
+    GameObject player_obj;
 
     private bool pauseMenuIsOpen, buffMenuIsOpen;
 
@@ -26,6 +28,7 @@ public class InGame_Menus : MonoBehaviour
         {
             if (!pauseMenuIsOpen)
             {
+                player_obj.GetComponent<Player_Controller>().noMenuIsOpen = false;
                 pauseMenu_obj.SetActive(true);
                 pauseMenuIsOpen = true;
                 Time.timeScale = 0;
@@ -37,6 +40,7 @@ public class InGame_Menus : MonoBehaviour
             }
             else if(pauseMenuIsOpen && !buffMenuIsOpen)
             {
+                player_obj.GetComponent<Player_Controller>().noMenuIsOpen = true;
                 pauseMenu_obj.SetActive(false);
                 pauseMenuIsOpen = false;
                 Time.timeScale = 1;
