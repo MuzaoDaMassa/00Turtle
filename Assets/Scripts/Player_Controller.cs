@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement; //temporariamente
 
 public class Player_Controller : MonoBehaviour
 {
@@ -69,7 +70,7 @@ public class Player_Controller : MonoBehaviour
 
         if (_hp <= 0)
         {
-            Destroy(gameObject);
+            SceneManager.LoadScene("InGame");
         }
 
         UpdateCurrentAmmoUI();
