@@ -31,7 +31,7 @@ public class GlassBottle : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             audioSource.PlayOneShot(deathSFX);
-            other.gameObject.GetComponent<Player_Controller>().Damage();
+            other.gameObject.GetComponent<Player_Controller>().TakeDamage();
             Destroy(gameObject);
         }
 

@@ -170,7 +170,7 @@ public class Player_Controller : MonoBehaviour
     }
 
 
-    public void Damage()
+    public void TakeDamage()
     {
         if (!_inDash && _hp >=1)
         {
